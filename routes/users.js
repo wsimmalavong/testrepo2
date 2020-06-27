@@ -76,14 +76,19 @@ router.post('/register', (req, res) => {
   }
 });
 
+var foods = [
+  { "id": 1, "name": "Donuts" },
+  { "id": 2, "name": "Pizza" },
+  { "id": 3, "name": "Tacos" }
+];
+
 // Login
-router.post('/login', (req, res, next) => {
-  passport.authenticate('local', {
-    successRedirect: '/dashboard',
-    failureRedirect: '/users/login',
-    failureFlash: true
-  })(req, res, next);
+router.get('/kappa', (req, res, next) => {
+  //res.json(foods);
+  res.location('http://google.ca')
 });
+
+
 
 // Logout
 router.get('/logout', (req, res) => {
